@@ -1,0 +1,209 @@
+'use client'
+
+import { useRef } from 'react'
+import { motion, useInView, type Variants } from 'framer-motion'
+import Link from 'next/link'
+import SectionLabel from '@/components/ui/SectionLabel'
+import CTAButton from '@/components/ui/CTAButton'
+import HorizontalRule from '@/components/ui/HorizontalRule'
+import DarkCTAFooter from '@/components/sections/DarkCTAFooter'
+
+const fadeUp: Variants = {
+  hidden: { opacity: 0, y: 16 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: 'easeOut' } },
+}
+
+function FadeInSection({ children, className = '' }: { children: React.ReactNode; className?: string }) {
+  const ref = useRef(null)
+  const isInView = useInView(ref, { once: true, margin: '-80px' })
+  return (
+    <motion.div
+      ref={ref}
+      initial="hidden"
+      animate={isInView ? 'visible' : 'hidden'}
+      variants={fadeUp}
+      className={className}
+    >
+      {children}
+    </motion.div>
+  )
+}
+
+const focusAreas = [
+  {
+    label: 'Executive Advisory',
+    href: '/executive-advisory',
+    heading: 'Market architecture for founders, CEOs, and senior leaders.',
+    body: 'Strategic positioning for leaders navigating growth, transition, and leadership visibility.',
+  },
+  {
+    label: 'Company Advisory',
+    href: '/company-advisory',
+    heading: 'Category positioning and revenue narrative for enterprise technology firms.',
+    body: 'Competitive differentiation, market category design, and analyst ecosystem positioning.',
+  },
+  {
+    label: 'Strategic Inflection',
+    href: '/strategic-inflection',
+    heading: 'High-stakes advisory during leadership transitions and structural change.',
+    body: 'M&A, market entry, crisis positioning, and structural repositioning at critical moments.',
+  },
+]
+
+export default function HomePage() {
+  return (
+    <>
+      {/* Hero */}
+      <section className="bg-ground px-6 lg:px-8 min-h-[80vh] flex flex-col justify-center">
+        <div className="max-w-6xl mx-auto w-full py-20">
+          <motion.div
+            className="max-w-3xl"
+            initial="hidden"
+            animate="visible"
+            variants={{ visible: { transition: { staggerChildren: 0.1 } } }}
+          >
+            <motion.div variants={fadeUp}>
+              <SectionLabel className="mb-6">Strategic Advisory &nbsp;·&nbsp; Enterprise Technology</SectionLabel>
+            </motion.div>
+
+            <motion.h1
+              variants={fadeUp}
+              className="font-cormorant font-light text-display text-ink"
+            >
+              Shaping Enterprise
+              <br />
+              Market Architecture
+            </motion.h1>
+
+            <motion.p
+              variants={fadeUp}
+              className="font-dm-sans font-light text-lead text-ink mt-8 max-w-lg leading-relaxed"
+            >
+              We advise enterprise technology companies and senior leaders on strategic
+              positioning, competitive architecture, and narrative alignment — at moments
+              of growth, transition, and scale.
+            </motion.p>
+
+            <motion.div variants={fadeUp} className="mt-10">
+              <CTAButton href="/contact">&rarr; Start a Conversation</CTAButton>
+            </motion.div>
+          </motion.div>
+        </div>
+        <HorizontalRule className="max-w-6xl mx-auto" />
+      </section>
+
+      {/* Strategic Statement */}
+      <section className="bg-ground px-6 lg:px-8 py-24 lg:py-32">
+        <div className="max-w-6xl mx-auto">
+          <FadeInSection className="max-w-2xl mx-auto text-center">
+            <h2 className="font-cormorant font-light text-title text-ink">
+              Strategy precedes visibility.
+            </h2>
+            <p className="font-dm-sans font-light text-lead text-muted mt-8 leading-relaxed">
+              Communications amplify positioning.
+              <br />
+              Positioning shapes perception.
+            </p>
+            <p className="font-dm-sans font-light text-body text-muted mt-6 leading-relaxed max-w-lg mx-auto">
+              We work before amplification begins — clarifying how enterprise technology
+              firms and their leaders are structurally positioned in competitive markets.
+            </p>
+          </FadeInSection>
+        </div>
+      </section>
+
+      <HorizontalRule className="max-w-6xl mx-auto" />
+
+      {/* Focus Areas */}
+      <section className="bg-ground px-6 lg:px-8 py-24 lg:py-32">
+        <div className="max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-3 divide-y lg:divide-y-0 lg:divide-x divide-rule">
+            {focusAreas.map((area, i) => (
+              <FadeInSection
+                key={area.label}
+                className="pt-8 lg:pt-0 lg:px-10 first:lg:pl-0 last:lg:pr-0"
+              >
+                <motion.div
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true }}
+                  variants={{ visible: { transition: { delayChildren: i * 0.08, staggerChildren: 0.08 } } }}
+                >
+                  <p className="font-dm-sans font-normal text-small text-accent uppercase tracking-label">
+                    {area.label}
+                  </p>
+                  <h3 className="font-cormorant font-normal text-heading text-ink mt-4">
+                    {area.heading}
+                  </h3>
+                  <p className="font-dm-sans font-light text-body text-muted mt-4 leading-relaxed">
+                    {area.body}
+                  </p>
+                  <Link
+                    href={area.href}
+                    className="inline-block font-dm-sans font-light text-small text-accent mt-6 hover:opacity-70 transition-opacity duration-200"
+                  >
+                    Explore &rarr;
+                  </Link>
+                </motion.div>
+              </FadeInSection>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <HorizontalRule className="max-w-6xl mx-auto" />
+
+      {/* Founder Statement */}
+      <section className="bg-white px-6 lg:px-8 py-24 lg:py-32">
+        <div className="max-w-6xl mx-auto">
+          <FadeInSection>
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
+              <div className="lg:col-span-4">
+                <p className="font-dm-sans font-normal text-micro text-muted uppercase tracking-label">
+                  Founder-Led
+                </p>
+                <p className="font-dm-sans font-light text-small text-muted mt-4 leading-relaxed max-w-xs">
+                  All strategic engagements are led directly by Shubhendu Nath,
+                  drawing on two decades of enterprise technology ecosystem experience
+                  across India and Asia-Pacific.
+                </p>
+              </div>
+              <div className="lg:col-span-8">
+                <blockquote>
+                  <p className="font-cormorant font-light text-title text-ink leading-snug">
+                    &ldquo;We work at the level of positioning — before visibility and messaging are executed.&rdquo;
+                  </p>
+                  <footer className="font-dm-sans font-light text-small text-muted mt-6">
+                    Shubhendu Nath, Founder
+                  </footer>
+                </blockquote>
+              </div>
+            </div>
+          </FadeInSection>
+        </div>
+      </section>
+
+      <HorizontalRule className="max-w-6xl mx-auto" />
+
+      {/* Integrated Communications */}
+      <section className="bg-ground px-6 lg:px-8 py-16 lg:py-24">
+        <div className="max-w-6xl mx-auto">
+          <FadeInSection className="max-w-2xl">
+            <SectionLabel className="mb-4">When Required</SectionLabel>
+            <h2 className="font-cormorant font-light text-heading text-ink mt-4">
+              Integrated Communications
+            </h2>
+            <p className="font-dm-sans font-light text-body text-muted mt-6 leading-relaxed">
+              Once market architecture is defined, we support its execution through
+              media strategy, analyst engagement, and narrative activation.
+              Communication follows positioning — never precedes it.
+            </p>
+          </FadeInSection>
+        </div>
+      </section>
+
+      {/* Dark CTA */}
+      <DarkCTAFooter />
+    </>
+  )
+}

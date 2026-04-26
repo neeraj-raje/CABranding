@@ -1,0 +1,51 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-ink: #1A1A1A;
+  --color-ground: #F8F7F4;
+  --color-rule: #DEDBD5;
+  --color-muted: #8A8880;
+  --color-accent: #2B4C7E;
+  --color-white: #FFFFFF;
+}
+
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    background-color: var(--color-ground);
+    color: var(--color-ink);
+  }
+
+  * {
+    border-color: var(--color-rule);
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .grayscale-photo {
+    filter: grayscale(100%);
+    transition: filter 300ms ease;
+  }
+
+  .grayscale-photo:hover {
+    filter: grayscale(60%);
+  }
+
+  .logo-white {
+    filter: brightness(0) invert(1);
+  }
+
+  .tracking-label {
+    letter-spacing: 0.12em;
+  }
+}
