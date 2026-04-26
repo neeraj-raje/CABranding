@@ -11,7 +11,7 @@ export default function EmDashList({ items, className = '' }: EmDashListProps) {
           key={i}
           className="font-dm-sans font-light text-body text-ink leading-loose"
         >
-          <span className="mr-2 text-muted select-none">&mdash;</span>
+          <span className="mr-2 text-accent-green select-none">&mdash;</span>
           {item}
         </li>
       ))}

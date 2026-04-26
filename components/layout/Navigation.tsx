@@ -25,11 +25,7 @@ export default function Navigation() {
   }, [])
 
   useEffect(() => {
-    if (menuOpen) {
-      document.body.style.overflow = 'hidden'
-    } else {
-      document.body.style.overflow = ''
-    }
+    document.body.style.overflow = menuOpen ? 'hidden' : ''
     return () => { document.body.style.overflow = '' }
   }, [menuOpen])
 
@@ -42,58 +38,47 @@ export default function Navigation() {
             : 'bg-ground'
         }`}
       >
-        <div className="max-w-6xl mx-auto px-6 lg:px-8">
-          <div className="flex items-center justify-between h-16 lg:h-18">
-            {/* Logo */}
-            <Link href="/" className="flex-shrink-0" aria-label="Change Agents — Home">
-              <Image
-                src="/assets/logo/change-agents-logo.png"
-                alt="Change Agents"
-                width={140}
-                height={40}
-                className="h-8 w-auto object-contain"
-                priority
-              />
-            </Link>
+        <div className="max-w-7xl mx-auto px-6 lg:px-10">
+          <div className="flex items-center justify-between h-24">
 
-            {/* Desktop nav */}
-            <nav className="hidden lg:flex items-center gap-8" aria-label="Main navigation">
-              {navLinks.map((link) => (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  className="font-dm-sans font-light text-small text-ink opacity-70 hover:opacity-100 transition-opacity duration-200"
-                >
-                  {link.label}
-                </Link>
-              ))}
-            </nav>
-
-            {/* Desktop CTA */}
-            <div className="hidden lg:block">
-              <Link
-                href="/contact"
-                className="font-dm-sans font-normal text-small text-accent border border-accent px-4 py-2 hover:bg-accent hover:text-white transition-colors duration-200"
+            {/* Left: Hamburger + Logo */}
+            <div className="flex items-center gap-5">
+              {/* Hamburger — always visible, left of logo */}
+              <button
+                onClick={() => setMenuOpen(true)}
+                className="flex flex-col justify-center items-center w-11 h-11 gap-[6px] flex-shrink-0"
+                aria-label="Open menu"
               >
-                Start a Conversation
+                <span className="block w-7 h-px bg-ink" />
+                <span className="block w-7 h-px bg-ink" />
+                <span className="block w-5 h-px bg-ink" />
+              </button>
+
+              {/* Logo — 3× larger */}
+              <Link href="/" className="flex-shrink-0" aria-label="Change Agents — Home">
+                <Image
+                  src="/assets/logo/change-agents-logo.png"
+                  alt="Change Agents"
+                  width={300}
+                  height={90}
+                  className="h-16 w-auto object-contain"
+                  priority
+                />
               </Link>
             </div>
 
-            {/* Mobile hamburger */}
-            <button
-              className="lg:hidden flex flex-col justify-center items-center w-11 h-11 gap-1.5"
-              onClick={() => setMenuOpen(true)}
-              aria-label="Open menu"
+            {/* Right: Start a Conversation — always visible */}
+            <Link
+              href="/contact"
+              className="font-dm-sans font-normal text-small text-accent border border-accent px-4 py-2 hover:bg-accent hover:text-white transition-colors duration-200 whitespace-nowrap"
             >
-              <span className="block w-6 h-px bg-ink" />
-              <span className="block w-6 h-px bg-ink" />
-              <span className="block w-4 h-px bg-ink" />
-            </button>
+              Start a Conversation
+            </Link>
           </div>
         </div>
       </header>
 
-      {/* Mobile full-screen overlay */}
+      {/* Full-screen menu overlay */}
       <AnimatePresence>
         {menuOpen && (
           <motion.div
@@ -103,50 +88,72 @@ export default function Navigation() {
             transition={{ duration: 0.2 }}
             className="fixed inset-0 z-50 bg-ground flex flex-col"
           >
-            <div className="flex items-center justify-between px-6 h-16">
-              <Link href="/" onClick={() => setMenuOpen(false)} aria-label="Change Agents — Home">
-                <Image
-                  src="/assets/logo/change-agents-logo.png"
-                  alt="Change Agents"
-                  width={140}
-                  height={40}
-                  className="h-8 w-auto object-contain"
-                />
-              </Link>
+            {/* Overlay header */}
+            <div className="flex items-center justify-between px-6 lg:px-10 h-24">
+              <div className="flex items-center gap-5">
+                <div className="w-11" /> {/* spacer matching hamburger width */}
+                <Link href="/" onClick={() => setMenuOpen(false)} aria-label="Change Agents — Home">
+                  <Image
+                    src="/assets/logo/change-agents-logo.png"
+                    alt="Change Agents"
+                    width={300}
+                    height={90}
+                    className="h-16 w-auto object-contain"
+                  />
+                </Link>
+              </div>
               <button
                 onClick={() => setMenuOpen(false)}
-                className="w-11 h-11 flex items-center justify-center text-ink text-xl"
+                className="w-11 h-11 flex items-center justify-center text-ink text-lg font-light"
                 aria-label="Close menu"
               >
                 ✕
               </button>
             </div>
 
-            <nav className="flex flex-col justify-center flex-1 px-8 gap-8" aria-label="Mobile navigation">
-              {navLinks.map((link) => (
-                <Link
+            {/* Nav links */}
+            <nav
+              className="flex flex-col justify-center flex-1 px-10 lg:px-20 gap-6"
+              aria-label="Site navigation"
+            >
+              {navLinks.map((link, i) => (
+                <motion.div
                   key={link.href}
-                  href={link.href}
-                  onClick={() => setMenuOpen(false)}
-                  className="font-dm-sans font-light text-heading text-ink opacity-80 hover:opacity-100 transition-opacity duration-200"
+                  initial={{ opacity: 0, x: -12 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: i * 0.06, duration: 0.3, ease: 'easeOut' }}
                 >
-                  {link.label}
-                </Link>
+                  <Link
+                    href={link.href}
+                    onClick={() => setMenuOpen(false)}
+                    className="font-cormorant font-light text-title text-ink opacity-80 hover:opacity-100 transition-opacity duration-200 block"
+                  >
+                    {link.label}
+                  </Link>
+                </motion.div>
               ))}
-              <Link
-                href="/contact"
-                onClick={() => setMenuOpen(false)}
-                className="font-dm-sans font-normal text-small text-accent border border-accent px-5 py-3 self-start hover:bg-accent hover:text-white transition-colors duration-200 mt-4"
+
+              <motion.div
+                initial={{ opacity: 0, x: -12 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: navLinks.length * 0.06, duration: 0.3, ease: 'easeOut' }}
+                className="mt-6"
               >
-                Start a Conversation
-              </Link>
+                <Link
+                  href="/contact"
+                  onClick={() => setMenuOpen(false)}
+                  className="font-dm-sans font-normal text-small text-accent border border-accent px-5 py-3 self-start inline-block hover:bg-accent hover:text-white transition-colors duration-200"
+                >
+                  Start a Conversation
+                </Link>
+              </motion.div>
             </nav>
           </motion.div>
         )}
       </AnimatePresence>
 
       {/* Spacer to push content below fixed nav */}
-      <div className="h-16" />
+      <div className="h-24" />
     </>
   )
 }

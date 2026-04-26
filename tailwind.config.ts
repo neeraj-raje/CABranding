@@ -14,6 +14,7 @@ const config: Config = {
         rule: '#DEDBD5',
         muted: '#8A8880',
         accent: '#2B4C7E',
+        'accent-green': '#2E7D52',
       },
       fontFamily: {
         cormorant: ['var(--font-cormorant)', 'Georgia', 'serif'],

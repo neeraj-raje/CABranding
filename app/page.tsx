@@ -53,22 +53,24 @@ const focusAreas = [
 export default function HomePage() {
   return (
     <>
-      {/* Hero */}
-      <section className="bg-ground px-6 lg:px-8 min-h-[80vh] flex flex-col justify-center">
+      {/* Hero — deep navy background */}
+      <section className="bg-accent px-6 lg:px-8 min-h-[80vh] flex flex-col justify-center">
         <div className="max-w-6xl mx-auto w-full py-20">
           <motion.div
-            className="max-w-3xl"
+            className="mx-auto text-center max-w-4xl"
             initial="hidden"
             animate="visible"
             variants={{ visible: { transition: { staggerChildren: 0.1 } } }}
           >
             <motion.div variants={fadeUp}>
-              <SectionLabel className="mb-6">Strategic Advisory &nbsp;·&nbsp; Enterprise Technology</SectionLabel>
+              <p className="font-dm-sans font-light text-micro text-white/60 uppercase tracking-label mb-6">
+                Strategic Advisory &nbsp;·&nbsp; Enterprise Technology
+              </p>
             </motion.div>
 
             <motion.h1
               variants={fadeUp}
-              className="font-cormorant font-light text-display text-ink"
+              className="font-cormorant font-normal text-display text-white"
             >
               Shaping Enterprise
               <br />
@@ -77,28 +79,35 @@ export default function HomePage() {
 
             <motion.p
               variants={fadeUp}
-              className="font-dm-sans font-light text-lead text-ink mt-8 max-w-lg leading-relaxed"
+              className="font-dm-sans font-light text-lead text-white/80 mt-8 max-w-xl mx-auto leading-relaxed"
             >
               We advise enterprise technology companies and senior leaders on strategic
               positioning, competitive architecture, and narrative alignment — at moments
               of growth, transition, and scale.
             </motion.p>
 
-            <motion.div variants={fadeUp} className="mt-10">
-              <CTAButton href="/contact">&rarr; Start a Conversation</CTAButton>
+            <motion.div variants={fadeUp} className="mt-10 flex justify-center">
+              <CTAButton href="/contact" variant="outline-inverted">
+                Start a Conversation
+              </CTAButton>
             </motion.div>
           </motion.div>
         </div>
-        <HorizontalRule className="max-w-6xl mx-auto" />
+
+        <div className="max-w-6xl mx-auto w-full">
+          <hr className="border-t border-white/20" />
+        </div>
       </section>
 
       {/* Strategic Statement */}
       <section className="bg-ground px-6 lg:px-8 py-24 lg:py-32">
         <div className="max-w-6xl mx-auto">
           <FadeInSection className="max-w-2xl mx-auto text-center">
-            <h2 className="font-cormorant font-light text-title text-ink">
-              Strategy precedes visibility.
-            </h2>
+            <div className="border-l-4 border-accent-green pl-6 text-left">
+              <h2 className="font-cormorant font-light text-title text-ink">
+                Strategy precedes visibility.
+              </h2>
+            </div>
             <p className="font-dm-sans font-light text-lead text-muted mt-8 leading-relaxed">
               Communications amplify positioning.
               <br />
@@ -118,33 +127,26 @@ export default function HomePage() {
       <section className="bg-ground px-6 lg:px-8 py-24 lg:py-32">
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-3 divide-y lg:divide-y-0 lg:divide-x divide-rule">
-            {focusAreas.map((area, i) => (
+            {focusAreas.map((area) => (
               <FadeInSection
                 key={area.label}
                 className="pt-8 lg:pt-0 lg:px-10 first:lg:pl-0 last:lg:pr-0"
               >
-                <motion.div
-                  initial="hidden"
-                  whileInView="visible"
-                  viewport={{ once: true }}
-                  variants={{ visible: { transition: { delayChildren: i * 0.08, staggerChildren: 0.08 } } }}
+                <p className="font-dm-sans font-normal text-small text-accent-green uppercase tracking-label">
+                  {area.label}
+                </p>
+                <h3 className="font-cormorant font-normal text-heading text-ink mt-4">
+                  {area.heading}
+                </h3>
+                <p className="font-dm-sans font-light text-body text-muted mt-4 leading-relaxed">
+                  {area.body}
+                </p>
+                <Link
+                  href={area.href}
+                  className="inline-block font-dm-sans font-light text-small text-accent-green mt-6 hover:opacity-70 transition-opacity duration-200"
                 >
-                  <p className="font-dm-sans font-normal text-small text-accent uppercase tracking-label">
-                    {area.label}
-                  </p>
-                  <h3 className="font-cormorant font-normal text-heading text-ink mt-4">
-                    {area.heading}
-                  </h3>
-                  <p className="font-dm-sans font-light text-body text-muted mt-4 leading-relaxed">
-                    {area.body}
-                  </p>
-                  <Link
-                    href={area.href}
-                    className="inline-block font-dm-sans font-light text-small text-accent mt-6 hover:opacity-70 transition-opacity duration-200"
-                  >
-                    Explore &rarr;
-                  </Link>
-                </motion.div>
+                  Explore &rarr;
+                </Link>
               </FadeInSection>
             ))}
           </div>
@@ -159,7 +161,7 @@ export default function HomePage() {
           <FadeInSection>
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
               <div className="lg:col-span-4">
-                <p className="font-dm-sans font-normal text-micro text-muted uppercase tracking-label">
+                <p className="font-dm-sans font-normal text-micro text-accent uppercase tracking-label">
                   Founder-Led
                 </p>
                 <p className="font-dm-sans font-light text-small text-muted mt-4 leading-relaxed max-w-xs">
@@ -169,7 +171,7 @@ export default function HomePage() {
                 </p>
               </div>
               <div className="lg:col-span-8">
-                <blockquote>
+                <blockquote className="border-l-4 border-accent pl-8">
                   <p className="font-cormorant font-light text-title text-ink leading-snug">
                     &ldquo;We work at the level of positioning — before visibility and messaging are executed.&rdquo;
                   </p>
