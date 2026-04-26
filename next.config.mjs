@@ -6,7 +6,8 @@ const nextConfig = {
   basePath: '/CABranding',
   trailingSlash: true,
   images: {
-    unoptimized: true, // required for static export
+    loader: 'custom',
+    loaderFile: './image-loader.ts',
   },
 }
 
