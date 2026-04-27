@@ -25,7 +25,7 @@ export default function DarkCTAFooter() {
   }
 
   return (
-    <section className="bg-accent px-6 lg:px-8 py-24 lg:py-32">
+    <section className="bg-gradient-to-r from-aurora-blue-500 via-aurora-blue-600 to-aurora-indigo-400 px-6 lg:px-8 py-24 lg:py-32">
       <motion.div
         ref={ref}
         initial={{ opacity: 0, y: 16 }}
@@ -40,7 +40,7 @@ export default function DarkCTAFooter() {
               We work with a small number of enterprise leaders each year.
             </h2>
 
-            <p className="font-dm-sans font-normal text-lg text-white/75 mt-6">
+            <p className="font-dm-sans font-normal text-lg text-white/80 mt-6">
               Engagement begins with a confidential exploratory discussion.
             </p>
           </div>
@@ -52,7 +52,7 @@ export default function DarkCTAFooter() {
             </h3>
 
             {submitted ? (
-              <div className="bg-accent-green bg-opacity-20 border border-accent-green rounded p-4">
+              <div className="bg-white/20 border border-white/40 rounded p-4 backdrop-blur-sm">
                 <p className="font-dm-sans text-body text-white">
                   We&apos;ll reach out to you shortly.
                 </p>
@@ -67,7 +67,7 @@ export default function DarkCTAFooter() {
                     value={formData.name}
                     onChange={handleInputChange}
                     required
-                    className="w-full bg-white/80 border border-white rounded px-4 py-2.5 font-dm-sans text-body text-ink placeholder-ink/50 focus:outline-none focus:border-white focus:ring-1 focus:ring-white transition-colors"
+                    className="w-full bg-white/90 border border-white/30 rounded px-4 py-2.5 font-dm-sans text-body text-ink placeholder-ink/50 focus:outline-none focus:border-white focus:ring-2 focus:ring-white/30 transition-colors"
                   />
                 </div>
                 <div>
@@ -78,7 +78,7 @@ export default function DarkCTAFooter() {
                     value={formData.email}
                     onChange={handleInputChange}
                     required
-                    className="w-full bg-white/80 border border-white rounded px-4 py-2.5 font-dm-sans text-body text-ink placeholder-ink/50 focus:outline-none focus:border-white focus:ring-1 focus:ring-white transition-colors"
+                    className="w-full bg-white/90 border border-white/30 rounded px-4 py-2.5 font-dm-sans text-body text-ink placeholder-ink/50 focus:outline-none focus:border-white focus:ring-2 focus:ring-white/30 transition-colors"
                   />
                 </div>
                 <div>
@@ -89,12 +89,12 @@ export default function DarkCTAFooter() {
                     onChange={handleInputChange}
                     required
                     rows={4}
-                    className="w-full bg-white/80 border border-white rounded px-4 py-2.5 font-dm-sans text-body text-ink placeholder-ink/50 focus:outline-none focus:border-white focus:ring-1 focus:ring-white transition-colors resize-none"
+                    className="w-full bg-white/90 border border-white/30 rounded px-4 py-2.5 font-dm-sans text-body text-ink placeholder-ink/50 focus:outline-none focus:border-white focus:ring-2 focus:ring-white/30 transition-colors resize-none"
                   />
                 </div>
                 <button
                   type="submit"
-                  className="w-full border border-white/60 text-white font-dm-sans font-normal text-small px-5 py-2.5 rounded hover:bg-white hover:text-accent transition-colors duration-200"
+                  className="w-full border border-white/40 text-white font-dm-sans font-normal text-small px-5 py-2.5 rounded hover:bg-white hover:text-aurora-blue-600 transition-colors duration-200"
                 >
                   Submit
                 </button>

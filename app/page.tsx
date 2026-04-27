@@ -78,16 +78,16 @@ export default function HomePage() {
       <HorizontalRule className="max-w-6xl mx-auto" />
 
       {/* Focus Areas */}
-      <section className="bg-ground px-6 lg:px-8 py-24 lg:py-32">
+      <section className="bg-white px-6 lg:px-8 py-24 lg:py-32">
         <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-3 divide-y lg:divide-y-0 lg:divide-x divide-rule">
+          <div className="grid grid-cols-1 lg:grid-cols-3 divide-y lg:divide-y-0 lg:divide-x divide-aurora-blue-100">
             {focusAreas.map((area) => (
               <FadeInSection
                 key={area.label}
                 className="pt-8 lg:pt-0 lg:px-10 first:lg:pl-0 last:lg:pr-0"
               >
-                <div className="bg-rule border border-rule rounded h-48 mb-6"></div>
-                <p className="font-dm-sans font-normal text-small text-accent-green uppercase tracking-label">
+                <div className="bg-gradient-to-br from-aurora-blue-50 to-aurora-violet-200 border border-aurora-blue-200 rounded h-48 mb-6"></div>
+                <p className="font-dm-sans font-normal text-small text-aurora-blue-600 uppercase tracking-label">
                   {area.label}
                 </p>
                 <h3 className="font-cormorant font-normal text-heading text-ink mt-4">
@@ -98,7 +98,7 @@ export default function HomePage() {
                 </p>
                 <Link
                   href={area.href}
-                  className="inline-block font-dm-sans font-light text-small text-accent-green mt-6 hover:opacity-70 transition-opacity duration-200"
+                  className="inline-block font-dm-sans font-light text-small text-aurora-blue-600 mt-6 hover:text-aurora-blue-500 transition-colors duration-200"
                 >
                   Explore &rarr;
                 </Link>
@@ -111,24 +111,27 @@ export default function HomePage() {
       <HorizontalRule className="max-w-6xl mx-auto" />
 
       {/* Founder Statement */}
-      <section className="bg-white px-6 lg:px-8 py-24 lg:py-32">
+      <section className="bg-gradient-to-b from-aurora-blue-50 to-white px-6 lg:px-8 py-24 lg:py-32">
         <div className="max-w-6xl mx-auto">
           <FadeInSection>
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
               <div className="lg:col-span-5">
-                <Image
-                  src="/assets/team/shubhendu-nath.jpg"
-                  alt="Shubhendu Nath"
-                  width={400}
-                  height={500}
-                  className="w-full h-auto object-cover rounded"
-                />
+                <div className="rounded-lg overflow-hidden border-2 border-aurora-blue-200 shadow-sm">
+                  <Image
+                    src="/assets/team/shubhendu-nath.jpg"
+                    alt="Shubhendu Nath"
+                    width={400}
+                    height={500}
+                    className="w-full h-auto object-cover"
+                  />
+                </div>
               </div>
               <div className="lg:col-span-7">
                 <h2 className="font-cormorant font-light text-title text-ink">
                   Founder-Led Advisory
                 </h2>
-                <p className="font-dm-sans font-light text-body text-muted mt-6 leading-relaxed">
+                <div className="w-12 h-1 bg-gradient-to-r from-aurora-blue-400 to-aurora-violet-300 mt-6 mb-6"></div>
+                <p className="font-dm-sans font-light text-body text-muted mt-4 leading-relaxed">
                   All strategic engagements are led directly by Shubhendu Nath, drawing on two decades of enterprise technology ecosystem experience across India and Asia-Pacific.
                 </p>
                 <p className="font-dm-sans font-light text-body text-muted mt-4 leading-relaxed">
@@ -143,16 +146,17 @@ export default function HomePage() {
       <HorizontalRule className="max-w-6xl mx-auto" />
 
       {/* Integrated Communications */}
-      <section className="bg-ground px-6 lg:px-8 py-24 lg:py-32">
+      <section className="bg-white px-6 lg:px-8 py-24 lg:py-32">
         <div className="max-w-6xl mx-auto">
           <FadeInSection>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-              <div className="bg-rule border border-rule rounded h-72"></div>
+              <div className="bg-gradient-to-br from-aurora-blue-100 via-aurora-indigo-300 to-aurora-violet-300 border border-aurora-blue-300 rounded h-72"></div>
               <div>
                 <h2 className="font-cormorant font-light text-heading text-ink">
                   Integrated Communications
                 </h2>
-                <p className="font-dm-sans font-light text-body text-muted mt-6 leading-relaxed">
+                <div className="w-12 h-1 bg-gradient-to-r from-aurora-blue-400 to-aurora-violet-300 mt-4 mb-6"></div>
+                <p className="font-dm-sans font-light text-body text-muted mt-2 leading-relaxed">
                   Once market architecture is defined, we support its execution through
                   media strategy, analyst engagement, and narrative activation.
                   Communication follows positioning — never precedes it.

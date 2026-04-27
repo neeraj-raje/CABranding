@@ -15,6 +15,23 @@ const config: Config = {
         muted: '#8A8880',
         accent: '#2B4C7E',
         'accent-green': '#2E7D52',
+        'aurora-blue': {
+          50: '#f0f9ff',
+          100: '#e0f2fe',
+          200: '#bae6fd',
+          300: '#93c5fd',
+          400: '#60a5fa',
+          500: '#3b82f6',
+          600: '#2563eb',
+        },
+        'aurora-indigo': {
+          300: '#a5b4fc',
+          400: '#818cf8',
+        },
+        'aurora-violet': {
+          200: '#ddd6fe',
+          300: '#c4b5fd',
+        },
       },
       fontFamily: {
         cormorant: ['var(--font-cormorant)', 'Georgia', 'serif'],
