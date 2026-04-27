@@ -94,7 +94,7 @@ export default function DarkCTAFooter() {
                 </div>
                 <button
                   type="submit"
-                  className="w-full bg-accent-green text-white font-dm-sans font-normal text-small py-2.5 rounded hover:opacity-90 transition-opacity duration-200"
+                  className="w-full border border-white/60 text-white font-dm-sans font-normal text-small px-5 py-2.5 rounded hover:bg-white hover:text-accent transition-colors duration-200"
                 >
                   Submit
                 </button>
