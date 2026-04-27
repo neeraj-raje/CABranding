@@ -3,6 +3,7 @@
 import { useRef } from 'react'
 import { motion, useInView, type Variants } from 'framer-motion'
 import Link from 'next/link'
+import Image from 'next/image'
 import CTAButton from '@/components/ui/CTAButton'
 import HorizontalRule from '@/components/ui/HorizontalRule'
 import DarkCTAFooter from '@/components/sections/DarkCTAFooter'
@@ -84,7 +85,7 @@ export default function HomePage() {
             </motion.p>
 
             <motion.div variants={fadeUp} className="mt-10 flex justify-center">
-              <CTAButton href="/contact" variant="green">
+              <CTAButton href="/contact" variant="outline-inverted">
                 Start a Conversation
               </CTAButton>
             </motion.div>
@@ -154,20 +155,26 @@ export default function HomePage() {
       <section className="bg-white px-6 lg:px-8 py-24 lg:py-32">
         <div className="max-w-6xl mx-auto">
           <FadeInSection>
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
-              <div className="lg:col-span-4">
-                <p className="font-dm-sans font-normal text-micro text-accent uppercase tracking-label">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+              <div className="lg:col-span-5">
+                <Image
+                  src="/assets/team/shubhendu-nath.jpg"
+                  alt="Shubhendu Nath"
+                  width={400}
+                  height={500}
+                  className="w-full h-auto object-cover rounded"
+                />
+              </div>
+              <div className="lg:col-span-7">
+                <h2 className="font-cormorant font-light text-title text-ink">
                   Founder-Led Advisory
-                </p>
-                <p className="font-dm-sans font-light text-body text-muted mt-4 leading-relaxed">
+                </h2>
+                <p className="font-dm-sans font-light text-body text-muted mt-6 leading-relaxed">
                   All strategic engagements are led directly by Shubhendu Nath, drawing on two decades of enterprise technology ecosystem experience across India and Asia-Pacific.
                 </p>
                 <p className="font-dm-sans font-light text-body text-muted mt-4 leading-relaxed">
                   Change Agents is supported by institutional depth and execution capability where activation is required.
                 </p>
-              </div>
-              <div className="lg:col-span-8">
-                <div className="bg-rule border border-rule rounded h-80"></div>
               </div>
             </div>
           </FadeInSection>
@@ -179,16 +186,20 @@ export default function HomePage() {
       {/* Integrated Communications */}
       <section className="bg-ground px-6 lg:px-8 py-24 lg:py-32">
         <div className="max-w-6xl mx-auto">
-          <FadeInSection className="max-w-4xl">
-            <h2 className="font-cormorant font-light text-heading text-ink">
-              Integrated Communications
-            </h2>
-            <div className="bg-rule border border-rule rounded h-72 my-8"></div>
-            <p className="font-dm-sans font-light text-body text-muted leading-relaxed">
-              Once market architecture is defined, we support its execution through
-              media strategy, analyst engagement, and narrative activation.
-              Communication follows positioning — never precedes it.
-            </p>
+          <FadeInSection>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+              <div className="bg-rule border border-rule rounded h-72"></div>
+              <div>
+                <h2 className="font-cormorant font-light text-heading text-ink">
+                  Integrated Communications
+                </h2>
+                <p className="font-dm-sans font-light text-body text-muted mt-6 leading-relaxed">
+                  Once market architecture is defined, we support its execution through
+                  media strategy, analyst engagement, and narrative activation.
+                  Communication follows positioning — never precedes it.
+                </p>
+              </div>
+            </div>
           </FadeInSection>
         </div>
       </section>

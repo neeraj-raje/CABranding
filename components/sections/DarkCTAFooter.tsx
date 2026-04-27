@@ -36,10 +36,6 @@ export default function DarkCTAFooter() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
           {/* Left side */}
           <div>
-            <p className="font-dm-sans font-light text-micro text-white/60 uppercase tracking-label mb-4">
-              Limited Engagements
-            </p>
-
             <h2 className="font-cormorant font-light text-title text-white">
               We work with a small number of enterprise leaders each year.
             </h2>
@@ -71,7 +67,7 @@ export default function DarkCTAFooter() {
                     value={formData.name}
                     onChange={handleInputChange}
                     required
-                    className="w-full bg-white/10 border border-white/20 rounded px-4 py-2.5 font-dm-sans text-body text-white placeholder-white/50 focus:outline-none focus:border-white/40 transition-colors"
+                    className="w-full bg-white/80 border border-white rounded px-4 py-2.5 font-dm-sans text-body text-ink placeholder-ink/50 focus:outline-none focus:border-white focus:ring-1 focus:ring-white transition-colors"
                   />
                 </div>
                 <div>
@@ -82,7 +78,7 @@ export default function DarkCTAFooter() {
                     value={formData.email}
                     onChange={handleInputChange}
                     required
-                    className="w-full bg-white/10 border border-white/20 rounded px-4 py-2.5 font-dm-sans text-body text-white placeholder-white/50 focus:outline-none focus:border-white/40 transition-colors"
+                    className="w-full bg-white/80 border border-white rounded px-4 py-2.5 font-dm-sans text-body text-ink placeholder-ink/50 focus:outline-none focus:border-white focus:ring-1 focus:ring-white transition-colors"
                   />
                 </div>
                 <div>
@@ -93,7 +89,7 @@ export default function DarkCTAFooter() {
                     onChange={handleInputChange}
                     required
                     rows={4}
-                    className="w-full bg-white/10 border border-white/20 rounded px-4 py-2.5 font-dm-sans text-body text-white placeholder-white/50 focus:outline-none focus:border-white/40 transition-colors resize-none"
+                    className="w-full bg-white/80 border border-white rounded px-4 py-2.5 font-dm-sans text-body text-ink placeholder-ink/50 focus:outline-none focus:border-white focus:ring-1 focus:ring-white transition-colors resize-none"
                   />
                 </div>
                 <button
