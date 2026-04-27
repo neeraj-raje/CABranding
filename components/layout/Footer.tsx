@@ -16,7 +16,7 @@ export default function Footer() {
       <div className="max-w-6xl mx-auto px-6 lg:px-8 py-12">
 
         {/* Logo left, nav right */}
-        <div className="flex items-center justify-between mb-12">
+        <div className="flex items-end justify-between mb-12">
           <Link href="/" aria-label="Change Agents — Home">
             <Image
               src="/assets/logo/change-agents-logo.png"
@@ -32,7 +32,7 @@ export default function Footer() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="font-dm-sans text-sm text-white hover:opacity-60 transition-opacity"
+                className="font-dm-sans text-sm text-white no-underline hover:opacity-60 transition-opacity"
               >
                 {link.label}
               </Link>
