@@ -46,6 +46,7 @@ export default function CompanyAdvisoryPage() {
         heading={`Market Architecture\nfor Enterprise Technology`}
         lead="We work with enterprise technology firms to define how they are positioned in competitive markets — beyond product messaging and marketing narratives."
         boldSans={true}
+        bgImage="/assets/images/company-advisory-bg.jpg"
       />
 
       {/* Where We Focus Section */}

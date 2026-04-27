@@ -35,7 +35,7 @@ export default function PageHero({
 }: PageHeroProps) {
   const bgStyle = bgImage
     ? {
-        backgroundImage: `linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('/CABranding${bgImage}')`,
+        backgroundImage: `linear-gradient(rgba(0,0,0,${boldSans ? '0.7' : '0.6'}), rgba(0,0,0,${boldSans ? '0.7' : '0.6'})), url('/CABranding${bgImage}')`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
       }
