@@ -43,11 +43,15 @@ export default function DarkCTAFooter() {
           {/* Left side */}
           <div>
             <h2 className="font-cormorant font-light text-5xl lg:text-6xl text-white leading-tight">
-              Let&apos;s discuss your strategy.
+              Start a confidential strategy conversation.
             </h2>
 
             <p className="font-dm-sans font-light text-lg text-white/70 mt-8 leading-relaxed">
-              We work with a select number of enterprise leaders each year. Engagement begins with a confidential exploratory conversation about your strategic positioning and competitive architecture.
+              We work with a small number of enterprise leaders each year to clarify positioning, competitive advantage, and market architecture.
+            </p>
+
+            <p className="font-dm-sans font-light text-lg text-white/70 mt-6 leading-relaxed">
+              If you&apos;re navigating growth, repositioning, or a strategic shift — this is where the conversation begins.
             </p>
           </div>
 
@@ -55,7 +59,7 @@ export default function DarkCTAFooter() {
           <div id="footer-form">
             <div className="bg-white/5 backdrop-blur-md border border-white/10 rounded-lg p-8">
               <h3 className="font-dm-sans font-semibold text-2xl text-white mb-8">
-                Let&apos;s start a conversation
+                Start the conversation
               </h3>
 
               {submitted ? (
@@ -91,7 +95,7 @@ export default function DarkCTAFooter() {
                   <div>
                     <textarea
                       name="message"
-                      placeholder="Tell us why you need us..."
+                      placeholder="What are you trying to solve or rethink?&#10;(e.g., repositioning, new market entry, portfolio clarity, narrative reset)"
                       value={formData.message}
                       onChange={handleInputChange}
                       required
@@ -103,8 +107,11 @@ export default function DarkCTAFooter() {
                     type="submit"
                     className="w-full border border-white/40 text-white font-dm-sans font-semibold text-small px-6 py-3 rounded-lg hover:border-white/60 hover:bg-white/10 transition-all duration-200 backdrop-blur-sm"
                   >
-                    Send
+                    Submit Request
                   </button>
+                  <p className="font-dm-sans font-light text-small text-white/60 text-center mt-4">
+                    We typically respond within 48 hours.
+                  </p>
                 </form>
               )}
             </div>
