@@ -2,7 +2,6 @@
 
 import { motion, type Variants } from 'framer-motion'
 import CTAButton from '@/components/ui/CTAButton'
-import HorizontalRule from '@/components/ui/HorizontalRule'
 
 const fadeUp: Variants = {
   hidden: { opacity: 0, y: 16 },

@@ -6,6 +6,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import DarkCTAFooter from '@/components/sections/DarkCTAFooter'
 import AuroraHero from '@/components/sections/AuroraHero'
+import HorizontalRule from '@/components/ui/HorizontalRule'
 
 const fadeUp: Variants = {
   hidden: { opacity: 0, y: 16 },
