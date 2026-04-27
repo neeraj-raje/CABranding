@@ -1,5 +1,5 @@
 import { Metadata } from 'next'
-import PageHero from '@/components/sections/PageHero'
+import ExecutiveAdvisoryHero from '@/components/sections/ExecutiveAdvisoryHero'
 import DarkCTAFooter from '@/components/sections/DarkCTAFooter'
 import EmDashList from '@/components/ui/EmDashList'
 import HorizontalRule from '@/components/ui/HorizontalRule'
@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 export default function ExecutiveAdvisoryPage() {
   return (
     <>
-      <PageHero
+      <ExecutiveAdvisoryHero
         label="Executive Market Architecture"
         heading={`Positioning for Leaders\nWho Shape Markets`}
         lead="We work with founders, CEOs, and senior leaders to clarify how they are positioned within their industry — and how that positioning translates into influence, opportunity, and long-term relevance."
