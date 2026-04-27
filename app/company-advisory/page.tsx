@@ -52,12 +52,13 @@ export default function CompanyAdvisoryPage() {
       {/* Where We Focus Section */}
       <section className="bg-white px-6 lg:px-8 py-20 lg:py-28">
         <div className="max-w-6xl mx-auto">
-          <h2 className="font-dm-sans font-bold text-4xl lg:text-5xl text-ink mb-16">
+          <h2 className="font-dm-sans font-bold text-4xl lg:text-5xl text-ink mb-4">
             Where We Focus
           </h2>
+          <div className="w-16 h-1 bg-gradient-to-r from-aurora-blue-500 to-aurora-violet-300 mb-16"></div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {focusAreas.map((area, idx) => (
-              <div key={idx} className="border-l-4 border-accent pl-6">
+              <div key={idx} className="border-l-4 border-aurora-blue-500 pl-6">
                 <h3 className="font-dm-sans font-semibold text-xl text-ink mb-3">
                   {area.title}
                 </h3>
@@ -71,14 +72,15 @@ export default function CompanyAdvisoryPage() {
       </section>
 
       {/* Typical Situations Section */}
-      <section className="bg-accent px-6 lg:px-8 py-20 lg:py-28">
+      <section className="bg-gradient-to-r from-aurora-blue-600 via-aurora-blue-700 to-aurora-indigo-600 px-6 lg:px-8 py-20 lg:py-28">
         <div className="max-w-6xl mx-auto">
-          <h2 className="font-dm-sans font-bold text-4xl lg:text-5xl text-white mb-16">
+          <h2 className="font-dm-sans font-bold text-4xl lg:text-5xl text-white mb-4">
             Typical Situations
           </h2>
+          <div className="w-16 h-1 bg-white/40 mb-16"></div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {situations.map((situation, idx) => (
-              <div key={idx} className="bg-white bg-opacity-10 border border-white/20 rounded p-6">
+              <div key={idx} className="bg-white/10 border border-white/20 rounded-lg p-6 backdrop-blur-sm hover:bg-white/15 transition-colors duration-200">
                 <p className="font-dm-sans font-normal text-lg text-white leading-relaxed">
                   {situation}
                 </p>
@@ -91,12 +93,13 @@ export default function CompanyAdvisoryPage() {
       {/* Key Insight Section */}
       <section className="bg-white px-6 lg:px-8 py-20 lg:py-28">
         <div className="max-w-4xl mx-auto text-center">
-          <h3 className="font-dm-sans font-bold text-sm uppercase tracking-widest text-accent mb-6">
+          <h3 className="font-dm-sans font-bold text-sm uppercase tracking-widest text-aurora-blue-600 mb-6">
             Strategic Foundation
           </h3>
           <h2 className="font-dm-sans font-bold text-4xl lg:text-5xl text-ink mb-8 leading-tight">
             We operate upstream of communications
           </h2>
+          <div className="w-12 h-1 bg-gradient-to-r from-aurora-blue-400 to-aurora-violet-300 mx-auto mb-8"></div>
           <p className="font-dm-sans font-light text-lg text-muted leading-relaxed max-w-2xl mx-auto">
             Clarifying the strategic foundation before visibility and messaging are executed. Market positioning is not about amplification — it&apos;s about structural clarity in how your firm is perceived and positioned in competitive markets.
           </p>

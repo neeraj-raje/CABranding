@@ -20,12 +20,13 @@ export default function ExecutiveAdvisoryPage() {
         bgImage="/assets/images/executive-advisory-bg-option2.jpg"
       />
 
-      <section className="bg-ground px-6 lg:px-8 py-20 lg:py-28">
+      <section className="bg-white px-6 lg:px-8 py-20 lg:py-28">
         <div className="max-w-6xl mx-auto space-y-16 lg:space-y-20">
           {/* When This Matters */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
             <div className="lg:col-span-5">
-              <h2 className="font-cormorant font-light text-heading text-ink mb-8">When This Matters</h2>
+              <h2 className="font-cormorant font-light text-heading text-ink mb-4">When This Matters</h2>
+              <div className="w-12 h-1 bg-gradient-to-r from-aurora-blue-400 to-aurora-violet-300 mb-8"></div>
               <EmDashList
                 items={[
                   'Stepping into a new leadership role',
@@ -37,19 +38,20 @@ export default function ExecutiveAdvisoryPage() {
               />
             </div>
             <div className="lg:col-span-7">
-              <div className="bg-rule border border-rule rounded h-72"></div>
+              <div className="bg-gradient-to-br from-aurora-blue-50 via-aurora-indigo-300 to-aurora-violet-300 border border-aurora-blue-200 rounded h-72"></div>
             </div>
           </div>
 
-          <HorizontalRule />
+          <HorizontalRule className="border-aurora-blue-100" />
 
           {/* What We Work On */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
             <div className="lg:col-span-7 order-2 lg:order-1">
-              <div className="bg-rule border border-rule rounded h-72"></div>
+              <div className="bg-gradient-to-br from-aurora-blue-100 via-aurora-indigo-300 to-aurora-violet-300 border border-aurora-blue-200 rounded h-72"></div>
             </div>
             <div className="lg:col-span-5 order-1 lg:order-2">
-              <h2 className="font-cormorant font-light text-heading text-ink mb-8">What We Work On</h2>
+              <h2 className="font-cormorant font-light text-heading text-ink mb-4">What We Work On</h2>
+              <div className="w-12 h-1 bg-gradient-to-r from-aurora-blue-400 to-aurora-violet-300 mb-8"></div>
               <EmDashList
                 items={[
                   'Strategic positioning and differentiation',
