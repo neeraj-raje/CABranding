@@ -17,7 +17,7 @@ export default function ExecutiveAdvisoryPage() {
         label="Executive Market Architecture"
         heading={`Positioning for Leaders\nWho Shape Markets`}
         lead="We work with founders, CEOs, and senior leaders to clarify how they are positioned within their industry — and how that positioning translates into influence, opportunity, and long-term relevance."
-        bgImage="/assets/images/executive-advisory-bg.jpg"
+        bgImage="/assets/images/executive-advisory-bg_Option2..jpeg"
       />
 
       <section className="bg-ground px-6 lg:px-8 py-20 lg:py-28">
