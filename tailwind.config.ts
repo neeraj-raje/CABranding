@@ -39,6 +39,15 @@ const config: Config = {
       borderColor: {
         DEFAULT: '#DEDBD5',
       },
+      animation: {
+        aurora: 'aurora 60s linear infinite',
+      },
+      keyframes: {
+        aurora: {
+          from: { backgroundPosition: '0% 0%, 0% 0%' },
+          to: { backgroundPosition: '300% 0%, -300% 0%' },
+        },
+      },
     },
   },
   plugins: [],
