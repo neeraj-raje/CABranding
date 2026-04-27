@@ -33,7 +33,7 @@ export default function PageHero({
 }: PageHeroProps) {
   const bgStyle = bgImage
     ? {
-        backgroundImage: `linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('${bgImage}')`,
+        backgroundImage: `linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('/CABranding${bgImage}')`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
       }
