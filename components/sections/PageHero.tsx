@@ -41,7 +41,7 @@ export default function PageHero({
 
   return (
     <section
-      className={`bg-ground px-6 lg:px-8 ${
+      className={`${bgImage ? '' : 'bg-ground'} px-6 lg:px-8 ${
         fullHeight ? 'min-h-[80vh] flex flex-col justify-center' : 'py-24 lg:py-32'
       }`}
       style={bgStyle}
