@@ -7,6 +7,7 @@ import SectionLabel from '@/components/ui/SectionLabel'
 import CTAButton from '@/components/ui/CTAButton'
 import HorizontalRule from '@/components/ui/HorizontalRule'
 import DarkCTAFooter from '@/components/sections/DarkCTAFooter'
+import HeroCityscape from '@/components/sections/HeroCityscape'
 
 const fadeUp: Variants = {
   hidden: { opacity: 0, y: 16 },
@@ -54,8 +55,9 @@ export default function HomePage() {
   return (
     <>
       {/* Hero — deep navy background */}
-      <section className="bg-accent px-6 lg:px-8 min-h-[80vh] flex flex-col justify-center">
-        <div className="max-w-6xl mx-auto w-full py-20">
+      <section className="bg-accent relative overflow-hidden px-6 lg:px-8 min-h-[80vh] flex flex-col justify-center">
+        <HeroCityscape />
+        <div className="relative z-10 max-w-6xl mx-auto w-full py-20">
           <motion.div
             className="mx-auto text-center max-w-4xl"
             initial="hidden"
