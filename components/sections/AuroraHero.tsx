@@ -72,7 +72,7 @@ export default function AuroraHero() {
             </motion.p>
 
             <motion.div variants={fadeUp} className="mt-10 flex justify-center">
-              <CTAButton href="/contact" variant="aurora-dark">
+              <CTAButton href="#footer-form" variant="aurora-dark">
                 Start a Conversation →
               </CTAButton>
             </motion.div>

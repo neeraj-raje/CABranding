@@ -3,7 +3,6 @@
 import { motion } from 'framer-motion'
 import { useInView } from 'framer-motion'
 import { useRef, useState } from 'react'
-import CTAButton from '@/components/ui/CTAButton'
 
 export default function DarkCTAFooter() {
   const ref = useRef(null)
@@ -50,19 +49,13 @@ export default function DarkCTAFooter() {
             <p className="font-dm-sans font-light text-lg text-white/70 mt-8 leading-relaxed">
               We work with a select number of enterprise leaders each year. Engagement begins with a confidential exploratory conversation about your strategic positioning and competitive architecture.
             </p>
-
-            <div className="mt-8">
-              <CTAButton href="/contact" variant="aurora-dark">
-                Schedule a Call →
-              </CTAButton>
-            </div>
           </div>
 
           {/* Right side — Contact form */}
-          <div>
+          <div id="footer-form">
             <div className="bg-white/5 backdrop-blur-md border border-white/10 rounded-lg p-8">
               <h3 className="font-dm-sans font-semibold text-2xl text-white mb-8">
-                Quick Inquiry
+                Let&apos;s start a conversation
               </h3>
 
               {submitted ? (
@@ -98,7 +91,7 @@ export default function DarkCTAFooter() {
                   <div>
                     <textarea
                       name="message"
-                      placeholder="Your inquiry"
+                      placeholder="Tell us why you need us..."
                       value={formData.message}
                       onChange={handleInputChange}
                       required
@@ -110,7 +103,7 @@ export default function DarkCTAFooter() {
                     type="submit"
                     className="w-full border border-white/40 text-white font-dm-sans font-semibold text-small px-6 py-3 rounded-lg hover:border-white/60 hover:bg-white/10 transition-all duration-200 backdrop-blur-sm"
                   >
-                    Send Inquiry
+                    Send
                   </button>
                 </form>
               )}
