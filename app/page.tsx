@@ -4,9 +4,8 @@ import { useRef } from 'react'
 import { motion, useInView, type Variants } from 'framer-motion'
 import Link from 'next/link'
 import Image from 'next/image'
-import CTAButton from '@/components/ui/CTAButton'
-import HorizontalRule from '@/components/ui/HorizontalRule'
 import DarkCTAFooter from '@/components/sections/DarkCTAFooter'
+import AuroraHero from '@/components/sections/AuroraHero'
 
 const fadeUp: Variants = {
   hidden: { opacity: 0, y: 16 },
@@ -53,49 +52,8 @@ const focusAreas = [
 export default function HomePage() {
   return (
     <>
-      {/* Hero — deep navy background */}
-      <section className="bg-accent px-6 lg:px-8 min-h-[80vh] flex flex-col justify-center">
-        <div className="max-w-6xl mx-auto w-full py-20">
-          <motion.div
-            className="mx-auto text-center max-w-4xl"
-            initial="hidden"
-            animate="visible"
-            variants={{ visible: { transition: { staggerChildren: 0.1 } } }}
-          >
-            <motion.div variants={fadeUp}>
-              <p className="font-dm-sans font-light text-micro text-white/60 uppercase tracking-label mb-6">
-                Strategic Advisory &nbsp;·&nbsp; Enterprise Technology
-              </p>
-            </motion.div>
-
-            <motion.h1
-              variants={fadeUp}
-              className="font-cormorant font-normal text-display text-white"
-            >
-              Shaping Enterprise
-              <br />
-              Market Architecture
-            </motion.h1>
-
-            <motion.p
-              variants={fadeUp}
-              className="font-dm-sans font-light text-lead text-white/80 mt-8 max-w-xl mx-auto leading-relaxed"
-            >
-              We advise enterprise technology companies and senior leaders on strategic positioning and competitive architecture — at moments of growth, transition, and scale.
-            </motion.p>
-
-            <motion.div variants={fadeUp} className="mt-10 flex justify-center">
-              <CTAButton href="/contact" variant="outline-inverted">
-                Start a Conversation
-              </CTAButton>
-            </motion.div>
-          </motion.div>
-        </div>
-
-        <div className="max-w-6xl mx-auto w-full">
-          <hr className="border-t border-white/20" />
-        </div>
-      </section>
+      {/* Aurora Hero */}
+      <AuroraHero />
 
       {/* Strategic Statement */}
       <section className="bg-ground px-6 lg:px-8 py-24 lg:py-28">
