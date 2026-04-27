@@ -14,6 +14,7 @@ interface PageHeroProps {
   ctaHref?: string
   fullHeight?: boolean
   bgImage?: string
+  boldSans?: boolean
 }
 
 const fadeUp: Variants = {
@@ -30,6 +31,7 @@ export default function PageHero({
   ctaHref = '/contact',
   fullHeight = false,
   bgImage,
+  boldSans = false,
 }: PageHeroProps) {
   const bgStyle = bgImage
     ? {
@@ -62,7 +64,7 @@ export default function PageHero({
           <motion.h1
             variants={fadeUp}
             transition={{ duration: 0.5, ease: 'easeOut' }}
-            className={`font-cormorant ${bgImage ? 'font-normal' : 'font-light'} text-display ${bgImage ? 'text-white' : 'text-ink'}`}
+            className={`${boldSans ? 'font-dm-sans font-bold text-5xl lg:text-6xl' : 'font-cormorant font-light text-display'} ${bgImage ? 'font-bold text-white' : 'text-ink'}`}
           >
             {heading}
           </motion.h1>
@@ -70,7 +72,7 @@ export default function PageHero({
           <motion.p
             variants={fadeUp}
             transition={{ duration: 0.5, ease: 'easeOut' }}
-            className={`font-dm-sans ${bgImage ? 'font-normal' : 'font-light'} text-lead ${bgImage ? 'text-white/90' : 'text-ink'} mt-8 max-w-lg leading-relaxed`}
+            className={`font-dm-sans ${boldSans || bgImage ? 'font-normal' : 'font-light'} ${boldSans ? 'text-lg' : 'text-lead'} ${bgImage ? 'text-white/90' : 'text-ink'} mt-8 max-w-lg leading-relaxed`}
           >
             {lead}
           </motion.p>

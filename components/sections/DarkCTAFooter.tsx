@@ -36,18 +36,18 @@ export default function DarkCTAFooter() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
           {/* Left side */}
           <div>
-            <h2 className="font-cormorant font-light text-title text-white">
+            <h2 className="font-dm-sans font-bold text-4xl lg:text-5xl text-white">
               We work with a small number of enterprise leaders each year.
             </h2>
 
-            <p className="font-dm-sans font-light text-lead text-white/75 mt-6">
+            <p className="font-dm-sans font-normal text-lg text-white/75 mt-6">
               Engagement begins with a confidential exploratory discussion.
             </p>
           </div>
 
           {/* Right side — Contact form */}
           <div>
-            <h3 className="font-cormorant font-light text-heading text-white mb-6">
+            <h3 className="font-dm-sans font-bold text-2xl text-white mb-6">
               Start a conversation
             </h3>
 

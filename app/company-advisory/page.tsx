@@ -45,6 +45,7 @@ export default function CompanyAdvisoryPage() {
       <PageHero
         heading={`Market Architecture\nfor Enterprise Technology`}
         lead="We work with enterprise technology firms to define how they are positioned in competitive markets — beyond product messaging and marketing narratives."
+        boldSans={true}
       />
 
       {/* Where We Focus Section */}
