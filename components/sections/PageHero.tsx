@@ -33,7 +33,7 @@ export default function PageHero({
 }: PageHeroProps) {
   const bgStyle = bgImage
     ? {
-        backgroundImage: `linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('/CABranding${bgImage}')`,
+        backgroundImage: `linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('/CABranding${bgImage}')`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
       }
@@ -62,7 +62,7 @@ export default function PageHero({
           <motion.h1
             variants={fadeUp}
             transition={{ duration: 0.5, ease: 'easeOut' }}
-            className={`font-cormorant font-light text-display ${bgImage ? 'text-white' : 'text-ink'}`}
+            className={`font-cormorant ${bgImage ? 'font-normal' : 'font-light'} text-display ${bgImage ? 'text-white' : 'text-ink'}`}
           >
             {heading}
           </motion.h1>
@@ -70,7 +70,7 @@ export default function PageHero({
           <motion.p
             variants={fadeUp}
             transition={{ duration: 0.5, ease: 'easeOut' }}
-            className={`font-dm-sans font-light text-lead ${bgImage ? 'text-white/85' : 'text-ink'} mt-8 max-w-lg leading-relaxed`}
+            className={`font-dm-sans ${bgImage ? 'font-normal' : 'font-light'} text-lead ${bgImage ? 'text-white/90' : 'text-ink'} mt-8 max-w-lg leading-relaxed`}
           >
             {lead}
           </motion.p>
